@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lino Barbers — 3 Website Direction Pack</title>
+  <style>
+    :root{--bg:#f3eee5;--ink:#151515;--muted:#6f675c;--paper:#fffaf1;--line:rgba(0,0,0,.14);--gold:#a98242;--green:#566b4e;--dark:#111}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}main{width:min(1120px,calc(100% - 32px));margin:0 auto;padding:34px 0 64px}.hero{padding:56px 0 36px}.kicker{text-transform:uppercase;letter-spacing:.18em;color:var(--gold);font-weight:900;font-size:12px}h1,h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.05em;line-height:.95}h1{font-size:clamp(48px,9vw,96px);margin:16px 0}h2{font-size:clamp(34px,5vw,58px);margin:0 0 16px}.lede{font-size:clamp(18px,2vw,23px);color:var(--muted);max-width:790px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:26px 0}.card{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:0 18px 60px rgba(0,0,0,.08)}.brand-card{min-height:360px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}.brand-card.dark{background:#111;color:#f8efdf}.brand-card.village{background:#fffaf0}.brand-card.modern{background:#171b1e;color:#f2f0ea}.pill{display:inline-block;border:1px solid currentColor;border-radius:999px;padding:8px 12px;font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:900;opacity:.75}.big{font-family:Georgia,"Times New Roman",serif;font-size:42px;line-height:1;margin:18px 0}.muted{color:var(--muted)}.dark .muted,.modern .muted{color:#c9c2b5}.swatches{display:flex;gap:8px;margin-top:18px}.swatch{width:38px;height:38px;border-radius:999px;border:1px solid rgba(255,255,255,.25)}.table{display:grid;gap:10px}.row{display:grid;grid-template-columns:220px 1fr;gap:12px;border-bottom:1px solid var(--line);padding:12px 0}.row strong{font-weight:900}.section{padding:30px 0}.button{display:inline-flex;margin-top:18px;padding:13px 18px;border-radius:999px;background:#111;color:white;font-weight:900}.note{background:#171717;color:#f7efe2;border-radius:28px;padding:24px;margin-top:24px}@media(max-width:860px){.grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}.brand-card{min-height:auto}}
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <p class="kicker">Lino Barbers Website Direction</p>
+      <h1>Three separate barber brands. One simple website system.</h1>
+      <p class="lede">The plan is to build Il Barbiere, Histon Barbers and Parker’s Barbers as separate-looking websites, while controlling them from one shared GitHub/Vercel codebase. Booksy remains the booking system.</p>
+    </section>
+
+    <section class="section">
+      <h2>Proposed look and feel</h2>
+      <div class="grid">
+        <article class="card brand-card dark">
+          <div>
+            <span class="pill">Il Barbiere</span>
+            <p class="big">Classic Cambridge heritage.</p>
+            <p class="muted">Premium, established, understated. Serif type, black/ivory, muted gold. Avoids trendy/hipster styling.</p>
+          </div>
+          <div class="swatches"><span class="swatch" style="background:#0f0f0f"></span><span class="swatch" style="background:#f8efdf"></span><span class="swatch" style="background:#c8a15a"></span></div>
+        </article>
+        <article class="card brand-card village">
+          <div>
+            <span class="pill">Histon Barbers</span>
+            <p class="big">Local, friendly, reliable.</p>
+            <p class="muted">Village/community feel. Warm neutral palette. Easy mobile booking. Strong for Histon, Impington and nearby customers.</p>
+          </div>
+          <div class="swatches"><span class="swatch" style="background:#f4efe4"></span><span class="swatch" style="background:#171717"></span><span class="swatch" style="background:#566b4e"></span></div>
+        </article>
+        <article class="card brand-card modern">
+          <div>
+            <span class="pill">Parker’s Barbers</span>
+            <p class="big">Sharp, clean, modern Cambridge.</p>
+            <p class="muted">A cleaner contemporary identity so Parker’s does not feel like a copy of Il Barbiere or Histon.</p>
+          </div>
+          <div class="swatches"><span class="swatch" style="background:#171b1e"></span><span class="swatch" style="background:#f2f0ea"></span><span class="swatch" style="background:#8a8f88"></span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What the websites include</h2>
+      <div class="card table">
+        <div class="row"><strong>Each site</strong><span>Home, services, gallery/photos, find us, contact, Booksy booking button.</span></div>
+        <div class="row"><strong>Booking</strong><span>Every shop gets its own Booksy link/widget. Customers should always reach the correct shop booking page.</span></div>
+        <div class="row"><strong>Management</strong><span>One shared template/codebase. Shop details changed from one simple config file.</span></div>
+        <div class="row"><strong>Hosting</strong><span>GitHub + Vercel. Fast, low-cost, easy to update.</span></div>
+        <div class="row"><strong>Mobile-first</strong><span>Designed mainly for phone users who want to find the shop and book quickly.</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What I need confirmed</h2>
+      <div class="card">
+        <p>For each shop: final trading name, address, phone number, opening hours, correct Booksy link/widget, Instagram/Facebook, whether prices should be shown on the site, and any real shop/team photos.</p>
+        <p class="muted">Until these are confirmed, the starter build will use placeholders and the known Histon Booksy link.</p>
+      </div>
+      <div class="note">
+        <strong>Decision needed first:</strong> choose whether the three directions above feel right: Il Barbiere = heritage, Histon = local/village, Parker’s = modern/sharp.
+      </div>
+    </section>
+  </main>
+</body>
+</html>

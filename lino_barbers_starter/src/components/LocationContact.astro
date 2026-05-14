@@ -1,0 +1,20 @@
+---
+const { shop } = Astro.props;
+---
+<section class="section" id="location">
+  <div class="container two-col">
+    <div class="card">
+      <h2 class="section-title">Find us</h2>
+      <p>{shop.address}</p>
+      <p><strong>Phone:</strong> {shop.phone}</p>
+      <p><strong>Instagram:</strong> {shop.instagram}</p>
+      <p><strong>Facebook:</strong> {shop.facebook}</p>
+    </div>
+    <div class="card" id="contact">
+      <h2 class="section-title">Opening hours</h2>
+      {shop.openingHours.map((row) => (
+        <p><strong>{row.day}</strong> — {row.hours}</p>
+      ))}
+    </div>
+  </div>
+</section>

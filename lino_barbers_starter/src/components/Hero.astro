@@ -1,0 +1,18 @@
+---
+const { shop } = Astro.props;
+const bookHref = shop.booksyUrl === 'Needs Lino confirmation' ? '#contact' : shop.booksyUrl;
+---
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker">{shop.shortName} · Lino Barbers</div>
+      <h1>{shop.tagline}</h1>
+      <p class="lede">{shop.intro}</p>
+      <div class="hero-actions">
+        <a class="button" href={bookHref} target={bookHref.startsWith('http') ? '_blank' : '_self'} rel="noreferrer">Book on Booksy</a>
+        <a class="button secondary" href="#services">View services</a>
+      </div>
+    </div>
+    <div class="mock-photo"></div>
+  </div>
+</section>

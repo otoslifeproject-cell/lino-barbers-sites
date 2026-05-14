@@ -1,0 +1,20 @@
+---
+const { shop } = Astro.props;
+---
+<section class="section" id="services">
+  <div class="container">
+    <h2 class="section-title">Services</h2>
+    <p class="lede">Keep live availability and final prices inside Booksy. The website should guide people quickly to the correct shop booking page.</p>
+    <div class="grid-4" style="margin-top: 24px;">
+      {shop.services.map((service) => (
+        <article class="card service-card">
+          <div>
+            <h3>{service.name}</h3>
+            <p>{service.note}</p>
+          </div>
+          <div class="price">{service.price}</div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

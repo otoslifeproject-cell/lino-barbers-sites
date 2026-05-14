@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import Services from '../../components/Services.astro';
+import LocationContact from '../../components/LocationContact.astro';
+import Footer from '../../components/Footer.astro';
+import { getShop } from '../../data/shops';
+
+const shop = getShop('histon-barbers');
+if (!shop) throw new Error('Shop not found');
+---
+<BaseLayout title={shop.seoTitle} description={shop.seoDescription} theme={shop.theme}>
+  <Header shop={shop} />
+  <main>
+    <Hero shop={shop} />
+    <Services shop={shop} />
+    <LocationContact shop={shop} />
+  </main>
+  <Footer shop={shop} />
+</BaseLayout>
