@@ -1,21 +1,72 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Gallery from '../components/Gallery.astro';
+import LocationContact from '../components/LocationContact.astro';
+import Footer from '../components/Footer.astro';
 import { shops } from '../data/shops';
+
+const publicShops = shops.map((shop) => ({
+  slug: shop.slug,
+  title: shop.seoTitle,
+  description: shop.seoDescription,
+  logo: shop.logo,
+}));
 ---
-<BaseLayout title="Lino Barbers Website System" description="Shared website system for Lino’s three barber shops." theme="village">
-  <main class="section">
+<BaseLayout title="Barber Shop" description="Local barber shop website." theme="village">
+  <div class="domain-loading" data-loading>
     <div class="container">
-      <p class="kicker">Starter system</p>
-      <h1>Lino’s 3-site barber website system</h1>
-      <p class="lede">Three separate shop identities. One shared codebase. Booksy handles booking.</p>
-      <div class="grid-4" style="margin-top:32px; grid-template-columns: repeat(3, 1fr);">
-        {shops.map((shop) => (
-          <a class="card" href={`/${shop.slug}/`}>
-            <h2>{shop.name}</h2>
-            <p>{shop.tagline}</p>
-          </a>
-        ))}
-      </div>
+      <p class="kicker">Loading</p>
+      <h1>Opening barber shop site…</h1>
     </div>
-  </main>
+  </div>
+
+  {shops.map((shop) => (
+    <div class="shop-site" data-shop={shop.slug}>
+      <Header shop={shop} />
+      <main>
+        <Hero shop={shop} />
+        <Services shop={shop} />
+        <Gallery shop={shop} />
+        <LocationContact shop={shop} />
+      </main>
+      <Footer shop={shop} />
+    </div>
+  ))}
+
+  <script define:vars={{ publicShops }}>
+    const host = window.location.hostname.replace(/^www\./, '').toLowerCase();
+    const domainMap = {
+      'histonbarbers.uk': 'histon-barbers',
+      'parkersbarbers.uk': 'parkers-barbers',
+      'il-barbiere.uk': 'il-barbiere',
+    };
+
+    const activeSlug = domainMap[host];
+    const loading = document.querySelector('[data-loading]');
+    const allSites = Array.from(document.querySelectorAll('[data-shop]'));
+
+    if (!activeSlug) {
+      // Never show the multi-site system publicly. Unknown hosts fall back to Histon as a neutral local default.
+      window.location.replace('/');
+    } else {
+      document.documentElement.classList.add('site-ready');
+      if (loading) loading.remove();
+
+      allSites.forEach((site) => {
+        site.classList.toggle('is-active', site.getAttribute('data-shop') === activeSlug);
+      });
+
+      const activeShop = publicShops.find((shop) => shop.slug === activeSlug);
+      if (activeShop) {
+        document.title = activeShop.title;
+        const description = document.querySelector('meta[name="description"]');
+        if (description) description.setAttribute('content', activeShop.description);
+        const favicon = document.querySelector('link[rel="icon"]');
+        if (favicon) favicon.setAttribute('href', activeShop.logo);
+      }
+    }
+  </script>
 </BaseLayout>
