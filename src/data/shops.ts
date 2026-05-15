@@ -17,6 +17,8 @@ export type Shop = {
   facebook: string;
   googleMapsUrl: string;
   theme: 'heritage' | 'village' | 'modern';
+  heroImage: string;
+  galleryImages: string[];
   seoTitle: string;
   seoDescription: string;
   services: { name: string; price: string; note: string }[];
@@ -80,6 +82,12 @@ export const shops: Shop[] = [
     facebook: 'Needs Lino confirmation',
     googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=22%20Magdalene%20St%2C%20Cambridge%20CB3%200AF',
     theme: 'heritage',
+    heroImage: '/images/il-barbiere/hero-01.png',
+    galleryImages: [
+      '/images/il-barbiere/gallery-01.jpg',
+      '/images/il-barbiere/gallery-02.jpg',
+      '/images/il-barbiere/gallery-03.jpg',
+    ],
     seoTitle: 'Il Barbiere | Barber on Magdalene Street, Cambridge',
     seoDescription: 'Classic Cambridge barbering at Il Barbiere, 22 Magdalene St, Cambridge CB3 0AF.',
     services: sharedServices,
@@ -104,6 +112,12 @@ export const shops: Shop[] = [
     facebook: 'Needs Lino confirmation',
     googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=2%20High%20Street%2C%20Histon%2C%20Cambridge%20CB24%209LG',
     theme: 'village',
+    heroImage: '/images/histon-barbers/hero-01.jpg',
+    galleryImages: [
+      '/images/histon-barbers/gallery-01.png',
+      '/images/histon-barbers/gallery-02.jpg',
+      '/images/histon-barbers/gallery-03.jpg',
+    ],
     seoTitle: 'Histon Barbers | Barber in Histon, Cambridge',
     seoDescription: 'Book a haircut, skin fade, beard trim or kids cut at Histon Barbers, 2 High Street, Histon, Cambridge CB24 9LG.',
     services: [
@@ -133,6 +147,12 @@ export const shops: Shop[] = [
     facebook: 'Needs Lino confirmation',
     googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=39a%20St%20Andrew%27s%20St%2C%20Cambridge%20CB2%203AR',
     theme: 'modern',
+    heroImage: '/images/parkers-barbers/hero-01.png',
+    galleryImages: [
+      '/images/parkers-barbers/gallery-01.png',
+      '/images/parkers-barbers/gallery-02.png',
+      '/images/parkers-barbers/gallery-03.png',
+    ],
     seoTitle: "Parker's Barber Shop | Barber in Cambridge",
     seoDescription: "Book online at Parker’s Barber Shop, 39a St Andrew's St, Cambridge CB2 3AR.",
     services: sharedServices,
