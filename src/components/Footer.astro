@@ -1,8 +1,18 @@
 ---
 const { shop } = Astro.props;
+const bookHref = shop.booksyUrl === 'Needs Lino confirmation' ? '#contact' : shop.booksyUrl;
 ---
 <footer class="footer">
-  <div class="container">
-    <p><strong>{shop.name}</strong> — booking powered by Booksy. Replace placeholder details before launch.</p>
+  <div class="container footer-grid">
+    <div>
+      <strong>{shop.name}</strong>
+      <p>{shop.identityNote}</p>
+    </div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#location">Find us</a>
+      <a href={bookHref} target={bookHref.startsWith('http') ? '_blank' : '_self'} rel="noreferrer">Book now</a>
+    </div>
   </div>
 </footer>
