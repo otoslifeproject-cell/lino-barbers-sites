@@ -1,70 +1,34 @@
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "histonbarbers.uk"
-        }
-      ],
-      "destination": "/histon-barbers/",
-      "permanent": false
+      "has": [{ "type": "host", "value": "histonbarbers.uk" }],
+      "destination": "/histon-barbers/"
     },
     {
       "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.histonbarbers.uk"
-        }
-      ],
-      "destination": "/histon-barbers/",
-      "permanent": false
+      "has": [{ "type": "host", "value": "www.histonbarbers.uk" }],
+      "destination": "/histon-barbers/"
     },
     {
       "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "parkersbarbers.uk"
-        }
-      ],
-      "destination": "/parkers-barbers/",
-      "permanent": false
+      "has": [{ "type": "host", "value": "parkersbarbers.uk" }],
+      "destination": "/parkers-barbers/"
     },
     {
       "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.parkersbarbers.uk"
-        }
-      ],
-      "destination": "/parkers-barbers/",
-      "permanent": false
+      "has": [{ "type": "host", "value": "www.parkersbarbers.uk" }],
+      "destination": "/parkers-barbers/"
     },
     {
       "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "il-barbiere.uk"
-        }
-      ],
-      "destination": "/il-barbiere/",
-      "permanent": false
+      "has": [{ "type": "host", "value": "il-barbiere.uk" }],
+      "destination": "/il-barbiere/"
     },
     {
       "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.il-barbiere.uk"
-        }
-      ],
-      "destination": "/il-barbiere/",
-      "permanent": false
+      "has": [{ "type": "host", "value": "www.il-barbiere.uk" }],
+      "destination": "/il-barbiere/"
     }
   ]
 }
