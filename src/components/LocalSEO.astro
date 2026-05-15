@@ -1,0 +1,18 @@
+---
+const { shop } = Astro.props;
+---
+<section class="section local-section" id="local">
+  <div class="container local-grid">
+    <div>
+      <p class="kicker">Local barber</p>
+      <h2 class="section-title">{shop.localSeoHeading}</h2>
+      <p class="lede">{shop.localSeoBody}</p>
+    </div>
+    <div class="card local-card">
+      <p class="kicker">Useful to know</p>
+      <ul class="local-points">
+        {shop.localSeoPoints.map((point) => <li>{point}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>
