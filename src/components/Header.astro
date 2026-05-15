@@ -4,7 +4,8 @@ const bookHref = shop.booksyUrl === 'Needs Lino confirmation' ? '#contact' : sho
 ---
 <header class="site-header">
   <div class="container nav">
-    <a class="brand" href="/">
+    <a class="brand" href="/" aria-label={`${shop.name} home`}>
+      <img class="brand-logo" src={shop.logo} alt={`${shop.name} logo`} />
       <span>{shop.name}</span>
     </a>
     <nav class="nav-links">
