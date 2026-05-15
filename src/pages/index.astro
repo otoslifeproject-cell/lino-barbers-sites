@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
 import Gallery from '../components/Gallery.astro';
+import LocalSEO from '../components/LocalSEO.astro';
 import LocationContact from '../components/LocationContact.astro';
 import Footer from '../components/Footer.astro';
 import { shops } from '../data/shops';
@@ -30,6 +31,7 @@ const publicShops = shops.map((shop) => ({
         <Hero shop={shop} />
         <Services shop={shop} />
         <Gallery shop={shop} />
+        <LocalSEO shop={shop} />
         <LocationContact shop={shop} />
       </main>
       <Footer shop={shop} />
@@ -48,12 +50,14 @@ const publicShops = shops.map((shop) => ({
     const loading = document.querySelector('[data-loading]');
     const allSites = Array.from(document.querySelectorAll('[data-shop]'));
 
+    const activeSite = allSites.find((site) => site.getAttribute('data-shop') === activeSlug);
+    allSites.forEach((site) => {
+      if (site !== activeSite) site.remove();
+    });
+
     document.documentElement.classList.add('site-ready');
     if (loading) loading.remove();
-
-    allSites.forEach((site) => {
-      site.classList.toggle('is-active', site.getAttribute('data-shop') === activeSlug);
-    });
+    if (activeSite) activeSite.classList.add('is-active');
 
     const activeShop = publicShops.find((shop) => shop.slug === activeSlug);
     if (activeShop) {
@@ -63,5 +67,16 @@ const publicShops = shops.map((shop) => ({
       const favicon = document.querySelector('link[rel="icon"]');
       if (favicon) favicon.setAttribute('href', activeShop.logo);
     }
+
+    document.addEventListener('click', (event) => {
+      const link = event.target.closest('a[href^="#"]');
+      if (!link) return;
+      const href = link.getAttribute('href');
+      if (!href || href === '#') return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   </script>
 </BaseLayout>
