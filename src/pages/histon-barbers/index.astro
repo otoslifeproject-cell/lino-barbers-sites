@@ -11,7 +11,7 @@ import { getShop } from '../../data/shops';
 const shop = getShop('histon-barbers');
 if (!shop) throw new Error('Shop not found');
 ---
-<BaseLayout title={shop.seoTitle} description={shop.seoDescription} theme={shop.theme}>
+<BaseLayout title={shop.seoTitle} description={shop.seoDescription} theme={shop.theme} logo={shop.logo}>
   <Header shop={shop} />
   <main>
     <Hero shop={shop} />
