@@ -8,11 +8,18 @@ const bookHref = shop.booksyUrl === 'Needs Lino confirmation' ? '#contact' : sho
       <img class="brand-logo" src={shop.logo} alt={`${shop.name} logo`} />
       <span>{shop.name}</span>
     </a>
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Main navigation">
       <a href="#services">Services</a>
       <a href="#gallery">Gallery</a>
+      <a href="#local">Local</a>
       <a href="#location">Find us</a>
       <a class="button" href={bookHref} target={bookHref.startsWith('http') ? '_blank' : '_self'} rel="noreferrer">Book now</a>
     </nav>
   </div>
 </header>
+<nav class="mobile-quick-nav" aria-label="Quick navigation">
+  <a href="#services">Services</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#location">Find us</a>
+  <a href={bookHref} target={bookHref.startsWith('http') ? '_blank' : '_self'} rel="noreferrer">Book</a>
+</nav>
