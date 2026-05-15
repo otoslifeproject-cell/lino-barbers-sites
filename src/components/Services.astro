@@ -1,10 +1,17 @@
 ---
 const { shop } = Astro.props;
+const bookHref = shop.booksyUrl === 'Needs Lino confirmation' ? '#contact' : shop.booksyUrl;
 ---
 <section class="section" id="services">
   <div class="container">
-    <h2 class="section-title">Services</h2>
-    <p class="lede">Keep live availability and final prices inside Booksy. The website should guide people quickly to the correct shop booking page.</p>
+    <div class="section-head">
+      <div>
+        <p class="kicker">Services</p>
+        <h2 class="section-title">Cuts, fades and tidy finishes</h2>
+      </div>
+      <a class="button secondary" href={bookHref} target={bookHref.startsWith('http') ? '_blank' : '_self'} rel="noreferrer">Check availability</a>
+    </div>
+    <p class="lede">{shop.serviceIntro}</p>
     <div class="grid-4" style="margin-top: 24px;">
       {shop.services.map((service) => (
         <article class="card service-card">
