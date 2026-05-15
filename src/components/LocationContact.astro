@@ -1,20 +1,27 @@
 ---
 const { shop } = Astro.props;
+const phoneHref = shop.phone === 'Needs Lino confirmation' ? '#contact' : `tel:${shop.phone.replace(/\s+/g, '')}`;
+const mapsHref = shop.googleMapsUrl && shop.googleMapsUrl !== '#' ? shop.googleMapsUrl : '#contact';
 ---
 <section class="section" id="location">
   <div class="container two-col">
     <div class="card">
-      <h2 class="section-title">Find us</h2>
+      <p class="kicker">Find us</p>
+      <h2 class="section-title">Visit {shop.shortName}</h2>
       <p>{shop.address}</p>
-      <p><strong>Phone:</strong> {shop.phone}</p>
-      <p><strong>Instagram:</strong> {shop.instagram}</p>
-      <p><strong>Facebook:</strong> {shop.facebook}</p>
+      <div class="contact-actions">
+        <a class="button" href={mapsHref} target={mapsHref.startsWith('http') ? '_blank' : '_self'} rel="noreferrer">Open maps</a>
+        <a class="button secondary" href={phoneHref}>Call {shop.shortName}</a>
+      </div>
     </div>
     <div class="card" id="contact">
-      <h2 class="section-title">Opening hours</h2>
-      {shop.openingHours.map((row) => (
-        <p><strong>{row.day}</strong> — {row.hours}</p>
-      ))}
+      <p class="kicker">Opening hours</p>
+      <h2 class="section-title">Plan your visit</h2>
+      <div class="hours-list">
+        {shop.openingHours.map((row) => (
+          <p><strong>{row.day}</strong><span>{row.hours}</span></p>
+        ))}
+      </div>
     </div>
   </div>
 </section>
