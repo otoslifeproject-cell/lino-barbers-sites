@@ -24,7 +24,7 @@ const publicShops = shops.map((shop) => ({
   </div>
 
   {shops.map((shop) => (
-    <div class="shop-site" data-shop={shop.slug}>
+    <div class={`shop-site theme-${shop.theme}`} data-shop={shop.slug}>
       <Header shop={shop} />
       <main>
         <Hero shop={shop} />
@@ -44,29 +44,24 @@ const publicShops = shops.map((shop) => ({
       'il-barbiere.uk': 'il-barbiere',
     };
 
-    const activeSlug = domainMap[host];
+    const activeSlug = domainMap[host] || 'histon-barbers';
     const loading = document.querySelector('[data-loading]');
     const allSites = Array.from(document.querySelectorAll('[data-shop]'));
 
-    if (!activeSlug) {
-      // Never show the multi-site system publicly. Unknown hosts fall back to Histon as a neutral local default.
-      window.location.replace('/');
-    } else {
-      document.documentElement.classList.add('site-ready');
-      if (loading) loading.remove();
+    document.documentElement.classList.add('site-ready');
+    if (loading) loading.remove();
 
-      allSites.forEach((site) => {
-        site.classList.toggle('is-active', site.getAttribute('data-shop') === activeSlug);
-      });
+    allSites.forEach((site) => {
+      site.classList.toggle('is-active', site.getAttribute('data-shop') === activeSlug);
+    });
 
-      const activeShop = publicShops.find((shop) => shop.slug === activeSlug);
-      if (activeShop) {
-        document.title = activeShop.title;
-        const description = document.querySelector('meta[name="description"]');
-        if (description) description.setAttribute('content', activeShop.description);
-        const favicon = document.querySelector('link[rel="icon"]');
-        if (favicon) favicon.setAttribute('href', activeShop.logo);
-      }
+    const activeShop = publicShops.find((shop) => shop.slug === activeSlug);
+    if (activeShop) {
+      document.title = activeShop.title;
+      const description = document.querySelector('meta[name="description"]');
+      if (description) description.setAttribute('content', activeShop.description);
+      const favicon = document.querySelector('link[rel="icon"]');
+      if (favicon) favicon.setAttribute('href', activeShop.logo);
     }
   </script>
 </BaseLayout>
