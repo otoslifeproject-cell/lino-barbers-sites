@@ -5,7 +5,7 @@ const bookHref = shop.booksyUrl === 'Needs Lino confirmation' ? '#contact' : sho
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <div class="kicker">{shop.shortName} · Lino Barbers</div>
+      <div class="kicker">{shop.kicker}</div>
       <h1>{shop.tagline}</h1>
       <p class="lede">{shop.intro}</p>
       <div class="hero-actions">
@@ -13,6 +13,9 @@ const bookHref = shop.booksyUrl === 'Needs Lino confirmation' ? '#contact' : sho
         <a class="button secondary" href="#services">View services</a>
       </div>
     </div>
-    <div class="mock-photo"></div>
+    <div class="hero-media">
+      <img src={shop.heroImage} alt={`${shop.name} shop preview`} />
+      <span>{shop.visualLabel}</span>
+    </div>
   </div>
 </section>
