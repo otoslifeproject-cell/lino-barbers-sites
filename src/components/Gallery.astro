@@ -3,9 +3,9 @@ const { shop } = Astro.props;
 ---
 <section class="section gallery-section" id="gallery">
   <div class="container">
-    <p class="kicker">Shop preview</p>
-    <h2 class="section-title">A feel for {shop.shortName}</h2>
-    <p class="lede">Temporary shop images for preview only. Replace with Lino-approved final photography before full public launch.</p>
+    <p class="kicker">Gallery</p>
+    <h2 class="section-title">Inside {shop.shortName}</h2>
+    <p class="lede">Temporary preview images are being used while Lino gathers final shop photography.</p>
     <div class="gallery-grid">
       {shop.galleryImages.map((image, index) => (
         <figure class="gallery-item">
