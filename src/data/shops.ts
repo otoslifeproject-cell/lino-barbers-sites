@@ -2,8 +2,12 @@ export type Shop = {
   slug: string;
   name: string;
   shortName: string;
+  kicker: string;
   tagline: string;
   intro: string;
+  serviceIntro: string;
+  visualLabel: string;
+  identityNote: string;
   logo: string;
   address: string;
   phone: string;
@@ -41,8 +45,12 @@ export const shops: Shop[] = [
     slug: 'il-barbiere',
     name: 'Il Barbiere',
     shortName: 'Il Barbiere',
-    tagline: 'Classic Cambridge barbering with real heritage.',
-    intro: 'A heritage-led barber identity for one of Lino’s Cambridge shops. Keep the tone confident, established and understated.',
+    kicker: 'Established Cambridge barbering',
+    tagline: 'Classic cuts. Quiet confidence. No fuss.',
+    intro: 'A black-and-white heritage treatment for Il Barbiere: simple, established and understated. This is a bonus/goodwill site unless Lino confirms it as part of the live job.',
+    serviceIntro: 'A restrained service menu. Keep final prices and live availability inside Booksy once the correct booking link is confirmed.',
+    visualLabel: 'Black & white heritage direction',
+    identityNote: 'Monochrome / classic / established',
     logo: '/logos/il-barbiere-logo.svg',
     address: 'Needs Lino confirmation',
     phone: 'Needs Lino confirmation',
@@ -61,8 +69,12 @@ export const shops: Shop[] = [
     slug: 'histon-barbers',
     name: 'Histon Barbers',
     shortName: 'Histon',
+    kicker: 'High Street barber in Histon',
     tagline: 'Your local Histon barber — easy booking, proper cuts.',
-    intro: 'A warmer local identity for Histon, focused on convenience, trust and village/community feel.',
+    intro: 'A warm orange-led identity for Histon Barbers: friendly, local, village-centred and easy to book from a phone.',
+    serviceIntro: 'Simple, familiar services for local customers. Prices below are from the current Booksy listing and should be confirmed before launch.',
+    visualLabel: 'Warm local Histon direction',
+    identityNote: 'Orange / friendly / village local',
     logo: '/logos/histon-logo.png',
     address: '2 High Street, Histon, Cambridge CB24 9LG — confirm with Lino',
     phone: '01223 236692 — confirm with Lino',
@@ -75,10 +87,10 @@ export const shops: Shop[] = [
     seoTitle: 'Histon Barbers | Barber in Histon, Cambridge',
     seoDescription: 'Book a haircut, skin fade, beard trim or kids cut at Histon Barbers.',
     services: [
-      { name: 'Haircut', price: '£18', note: 'Confirm current price with Lino.' },
-      { name: 'Skin fade', price: '£20', note: 'Confirm current price with Lino.' },
-      { name: 'Haircut & beard', price: '£25+', note: 'Confirm current price with Lino.' },
-      { name: 'Kids cut', price: '£15', note: 'Confirm current price with Lino.' },
+      { name: 'Haircut', price: '£18', note: 'Classic local haircut. Confirm current price with Lino.' },
+      { name: 'Skin fade', price: '£20', note: 'Clean fade, shaped and finished properly.' },
+      { name: 'Haircut & beard', price: '£25+', note: 'Cut, beard shape and tidy finish.' },
+      { name: 'Kids cut', price: '£15', note: 'Friendly, simple and reliable.' },
     ],
     openingHours: defaultHours,
   },
@@ -86,8 +98,12 @@ export const shops: Shop[] = [
     slug: 'parkers-barbers',
     name: "Parker's Barbers",
     shortName: "Parker's",
-    tagline: 'Sharp, clean barbering for Cambridge.',
-    intro: 'A more modern identity for Parker’s. Do not treat Parker’s as a competitor — this is Lino’s third shop.',
+    kicker: 'Sharp Cambridge barbering',
+    tagline: 'Clean lines. Sharp fades. Fresh appointments.',
+    intro: 'A green-led contemporary identity for Parker’s Barbers: sharper, more modern and more appointment-led than Histon.',
+    serviceIntro: 'Keep the menu punchy and modern. Use Booksy as the live source of availability and final prices once Lino confirms the correct link.',
+    visualLabel: 'Green modern Parker’s direction',
+    identityNote: 'Green / sharp / contemporary',
     logo: '/logos/parkers-logo.svg',
     address: 'Needs Lino confirmation',
     phone: 'Needs Lino confirmation',
