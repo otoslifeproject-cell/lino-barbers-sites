@@ -21,6 +21,9 @@ export type Shop = {
   galleryImages: string[];
   seoTitle: string;
   seoDescription: string;
+  localSeoHeading: string;
+  localSeoBody: string;
+  localSeoPoints: string[];
   services: { name: string; price: string; note: string }[];
   openingHours: { day: string; hours: string }[];
 };
@@ -90,6 +93,9 @@ export const shops: Shop[] = [
     ],
     seoTitle: 'Il Barbiere | Barber on Magdalene Street, Cambridge',
     seoDescription: 'Classic Cambridge barbering at Il Barbiere, 22 Magdalene St, Cambridge CB3 0AF.',
+    localSeoHeading: 'Traditional barbering near Magdalene Street, Cambridge',
+    localSeoBody: 'Il Barbiere is positioned for customers looking for a classic barber in central Cambridge, close to Magdalene Street, Bridge Street, Quayside and the historic city centre. This draft copy can be approved or refined by Lino before launch, but it gives the page stronger local relevance while keeping the tone understated and professional.',
+    localSeoPoints: ['Magdalene Street location', 'Central Cambridge barber', 'Classic cuts and beard tidy-ups', 'Easy route from the city centre'],
     services: sharedServices,
     openingHours: ilBarbiereHours,
   },
@@ -120,6 +126,9 @@ export const shops: Shop[] = [
     ],
     seoTitle: 'Histon Barbers | Barber in Histon, Cambridge',
     seoDescription: 'Book a haircut, skin fade, beard trim or kids cut at Histon Barbers, 2 High Street, Histon, Cambridge CB24 9LG.',
+    localSeoHeading: 'Local barber on Histon High Street',
+    localSeoBody: 'Histon Barbers is being shaped as the local high-street option for customers in Histon, Impington and north Cambridge who want a straightforward haircut, skin fade, beard trim or kids cut without fuss. This placeholder wording adds useful local search relevance and can be adjusted once Lino confirms the final tone.',
+    localSeoPoints: ['Histon High Street location', 'Serving Histon and Impington', 'Haircuts, fades and beard trims', 'Simple online booking with Booksy'],
     services: [
       { name: 'Haircut', price: '£18', note: 'Classic local haircut. Confirm current price with Lino.' },
       { name: 'Skin fade', price: '£20', note: 'Clean fade, shaped and finished properly.' },
@@ -155,6 +164,9 @@ export const shops: Shop[] = [
     ],
     seoTitle: "Parker's Barber Shop | Barber in Cambridge",
     seoDescription: "Book online at Parker’s Barber Shop, 39a St Andrew's St, Cambridge CB2 3AR.",
+    localSeoHeading: 'City-centre barber on St Andrew’s Street, Cambridge',
+    localSeoBody: 'Parker’s Barber Shop is positioned for Cambridge city-centre customers looking for a clean haircut, sharp fade or beard tidy close to St Andrew’s Street, the Grand Arcade and central shopping streets. This draft local copy gives the site stronger search substance while Lino reviews the final wording.',
+    localSeoPoints: ['St Andrew’s Street location', 'Cambridge city-centre barber', 'Sharp fades and modern cuts', 'Book appointments online with Booksy'],
     services: sharedServices,
     openingHours: parkersHours,
   },
