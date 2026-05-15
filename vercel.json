@@ -1,5 +1,5 @@
 {
-  "rewrites": [
+  "redirects": [
     {
       "source": "/",
       "has": [
@@ -8,7 +8,8 @@
           "value": "histonbarbers.uk"
         }
       ],
-      "destination": "/histon-barbers/"
+      "destination": "/histon-barbers/",
+      "permanent": false
     },
     {
       "source": "/",
@@ -18,7 +19,8 @@
           "value": "www.histonbarbers.uk"
         }
       ],
-      "destination": "/histon-barbers/"
+      "destination": "/histon-barbers/",
+      "permanent": false
     },
     {
       "source": "/",
@@ -28,7 +30,8 @@
           "value": "parkersbarbers.uk"
         }
       ],
-      "destination": "/parkers-barbers/"
+      "destination": "/parkers-barbers/",
+      "permanent": false
     },
     {
       "source": "/",
@@ -38,7 +41,8 @@
           "value": "www.parkersbarbers.uk"
         }
       ],
-      "destination": "/parkers-barbers/"
+      "destination": "/parkers-barbers/",
+      "permanent": false
     },
     {
       "source": "/",
@@ -48,7 +52,8 @@
           "value": "il-barbiere.uk"
         }
       ],
-      "destination": "/il-barbiere/"
+      "destination": "/il-barbiere/",
+      "permanent": false
     },
     {
       "source": "/",
@@ -58,7 +63,8 @@
           "value": "www.il-barbiere.uk"
         }
       ],
-      "destination": "/il-barbiere/"
+      "destination": "/il-barbiere/",
+      "permanent": false
     }
   ]
 }
