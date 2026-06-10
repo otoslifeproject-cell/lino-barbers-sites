@@ -1,18 +1,22 @@
 ---
 const { shop } = Astro.props;
-const bookHref = shop.booksyUrl === 'Needs Lino confirmation' ? '#contact' : shop.booksyUrl;
+const bookHref = shop.booksyUrl ? shop.booksyUrl : '#location';
+const bookingText = shop.bookingMode === 'walk-ins-only' ? 'Walk-ins only' : 'Book online or walk in';
+const bookingLabel = shop.bookingMode === 'walk-ins-only' ? 'Visit us' : 'Book now';
 ---
 <footer class="footer">
   <div class="container footer-grid">
-    <div>
+    <div class="footer-business">
       <strong>{shop.name}</strong>
-      <p>{shop.identityNote}</p>
+      <p>{shop.address}</p>
+      <p>{shop.phone}</p>
+      <p>{bookingText}</p>
     </div>
-    <div class="footer-links">
-      <a href="#services">Services</a>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="#services">Prices</a>
       <a href="#gallery">Gallery</a>
       <a href="#location">Find us</a>
-      <a href={bookHref} target={bookHref.startsWith('http') ? '_blank' : '_self'} rel="noreferrer">Book now</a>
-    </div>
+      <a href={bookHref} target={shop.booksyUrl ? '_blank' : '_self'} rel="noreferrer">{bookingLabel}</a>
+    </nav>
   </div>
 </footer>
