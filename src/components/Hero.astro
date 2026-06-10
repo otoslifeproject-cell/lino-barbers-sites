@@ -1,6 +1,7 @@
 ---
 const { shop } = Astro.props;
-const bookHref = shop.booksyUrl === 'Needs Lino confirmation' ? '#contact' : shop.booksyUrl;
+const bookHref = shop.booksyUrl ? shop.booksyUrl : '#location';
+const primaryTarget = shop.booksyUrl ? '_blank' : '_self';
 ---
 <section class="hero">
   <div class="container hero-grid">
@@ -8,9 +9,13 @@ const bookHref = shop.booksyUrl === 'Needs Lino confirmation' ? '#contact' : sho
       <div class="kicker">{shop.kicker}</div>
       <h1>{shop.tagline}</h1>
       <p class="lede">{shop.intro}</p>
+      <div class="hero-badges" aria-label="Shop highlights">
+        <span>{shop.availabilityLine}</span>
+        {shop.highlights.slice(0, 2).map((item) => <span>{item.title}</span>)}
+      </div>
       <div class="hero-actions">
-        <a class="button" href={bookHref} target={bookHref.startsWith('http') ? '_blank' : '_self'} rel="noreferrer">Book on Booksy</a>
-        <a class="button secondary" href="#services">View services</a>
+        <a class="button" href={bookHref} target={primaryTarget} rel="noreferrer">{shop.primaryCtaLabel}</a>
+        <a class="button secondary" href="#services">View prices</a>
       </div>
     </div>
     <div class="hero-media">
