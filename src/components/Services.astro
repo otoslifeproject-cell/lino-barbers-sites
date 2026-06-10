@@ -26,14 +26,3 @@ const primaryTarget = shop.booksyUrl ? '_blank' : '_self';
     </div>
   </div>
 </section>
-<section class="section highlight-section" aria-label={`${shop.name} highlights`}>
-  <div class="container highlight-grid">
-    {shop.highlights.map((item) => (
-      <article class="card highlight-card">
-        <p class="kicker">Good to know</p>
-        <h3>{item.title}</h3>
-        <p>{item.text}</p>
-      </article>
-    ))}
-  </div>
-</section>
