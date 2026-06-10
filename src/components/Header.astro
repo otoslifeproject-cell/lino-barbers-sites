@@ -1,6 +1,8 @@
 ---
 const { shop } = Astro.props;
-const bookHref = shop.booksyUrl === 'Needs Lino confirmation' ? '#contact' : shop.booksyUrl;
+const bookHref = shop.booksyUrl ? shop.booksyUrl : '#location';
+const primaryTarget = shop.booksyUrl ? '_blank' : '_self';
+const shortCta = shop.bookingMode === 'walk-ins-only' ? 'Walk in' : 'Book';
 ---
 <header class="site-header">
   <div class="container nav">
@@ -9,17 +11,17 @@ const bookHref = shop.booksyUrl === 'Needs Lino confirmation' ? '#contact' : sho
       <span>{shop.name}</span>
     </a>
     <nav class="nav-links" aria-label="Main navigation">
-      <a href="#services">Services</a>
+      <a href="#services">Prices</a>
       <a href="#gallery">Gallery</a>
       <a href="#local">Local</a>
       <a href="#location">Find us</a>
-      <a class="button" href={bookHref} target={bookHref.startsWith('http') ? '_blank' : '_self'} rel="noreferrer">Book now</a>
+      <a class="button" href={bookHref} target={primaryTarget} rel="noreferrer">{shortCta}</a>
     </nav>
   </div>
 </header>
 <nav class="mobile-quick-nav" aria-label="Quick navigation">
-  <a href="#services">Services</a>
+  <a href="#services">Prices</a>
   <a href="#gallery">Gallery</a>
   <a href="#location">Find us</a>
-  <a href={bookHref} target={bookHref.startsWith('http') ? '_blank' : '_self'} rel="noreferrer">Book</a>
+  <a href={bookHref} target={primaryTarget} rel="noreferrer">{shortCta}</a>
 </nav>
