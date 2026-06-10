@@ -56,14 +56,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 92px; }
-body {
-  margin: 0;
-  font-family: var(--body);
-  background: var(--bg);
-  color: var(--ink);
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
+body { margin: 0; font-family: var(--body); background: var(--bg); color: var(--ink); text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
@@ -85,6 +78,8 @@ img { max-width: 100%; display: block; }
 .kicker { color: var(--accent); text-transform: uppercase; letter-spacing: .16em; font-size: 12px; font-weight: 900; }
 h1 { font-family: var(--display); font-size: clamp(46px, 9vw, 102px); line-height: .92; letter-spacing: -.055em; margin: 18px 0; }
 .lede { max-width: 680px; color: var(--muted); font-size: clamp(18px, 2vw, 22px); line-height: 1.5; }
+.hero-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.hero-badges span { display: inline-flex; align-items: center; min-height: 34px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; background: color-mix(in srgb, var(--paper) 58%, transparent); color: var(--muted); font-size: 13px; font-weight: 900; backdrop-filter: blur(10px); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 14px; }
 .card { background: color-mix(in srgb, var(--paper) 94%, transparent); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 24px 80px rgba(0,0,0,.12); }
@@ -92,14 +87,20 @@ h1 { font-family: var(--display); font-size: clamp(46px, 9vw, 102px); line-heigh
 .hero-media img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; transform: scale(1.01); }
 .hero-media span { position: absolute; left: 22px; bottom: 22px; padding: 10px 14px; border-radius: 999px; background: color-mix(in srgb, var(--paper) 90%, transparent); color: var(--ink); font-size: 13px; font-weight: 900; backdrop-filter: blur(10px); }
 .section { padding: 58px 0; }
+.highlight-section { padding-top: 0; }
 .section-title { font-family: var(--display); font-size: clamp(34px, 5vw, 58px); margin: 0 0 18px; letter-spacing: -.04em; }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .service-card { min-height: 178px; display: flex; flex-direction: column; justify-content: space-between; transition: transform .18s ease, box-shadow .18s ease; }
 .service-card:hover { transform: translateY(-3px); }
 .service-card p { color: var(--muted); line-height: 1.45; }
 .price { font-size: 32px; font-weight: 900; }
+.highlight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.highlight-card { min-height: 180px; display: flex; flex-direction: column; justify-content: space-between; }
+.highlight-card h3 { margin: 8px 0; font-size: 24px; }
+.highlight-card p:last-child { color: var(--muted); line-height: 1.5; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.contact-note { margin-top: 18px; color: var(--muted); }
 .hours-list p { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 0; padding: 11px 0; border-bottom: 1px solid var(--line); }
 .hours-list p:last-child { border-bottom: 0; }
 .gallery-grid { display: grid; grid-template-columns: 1.2fr .9fr .9fr; gap: 16px; margin-top: 24px; }
@@ -125,6 +126,7 @@ h1 { font-family: var(--display); font-size: clamp(46px, 9vw, 102px); line-heigh
 .theme-heritage .card { box-shadow: none; }
 .theme-heritage .button { border-radius: 0; text-transform: uppercase; letter-spacing: .12em; }
 .theme-heritage .hero-media, .theme-heritage .gallery-item { filter: grayscale(1); }
+.theme-heritage .hero-badges span { border-radius: 0; }
 
 .theme-village .brand, .theme-village h1, .theme-village .section-title { letter-spacing: -.035em; }
 .theme-village .hero-grid { grid-template-columns: .95fr 1.05fr; }
@@ -138,15 +140,17 @@ h1 { font-family: var(--display); font-size: clamp(46px, 9vw, 102px); line-heigh
 .theme-modern .button { border-radius: 14px; text-transform: uppercase; letter-spacing: .08em; }
 .theme-modern .card { border-left: 4px solid var(--accent); }
 .theme-modern .hero-media { min-height: 470px; clip-path: polygon(0 0, 100% 5%, 92% 100%, 0 94%); }
+.theme-modern .hero-badges span { border-radius: 14px; text-transform: uppercase; letter-spacing: .06em; }
 
 @media (max-width: 980px) {
   .hero-grid, .theme-heritage .hero-grid, .theme-village .hero-grid, .theme-modern .hero-grid { grid-template-columns: 1fr; }
   .theme-modern .hero-media { clip-path: none; }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .highlight-grid { grid-template-columns: 1fr; }
   .local-grid, .two-col { grid-template-columns: 1fr; }
 }
 @media (max-width: 800px) {
-  html { scroll-padding-top: 92px; }
+  html { scroll-padding-top: 120px; }
   .nav-links a:not(.button) { display: none; }
   .nav { min-height: 70px; }
   .mobile-quick-nav { position: sticky; top: 70px; z-index: 39; display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 91%, transparent); backdrop-filter: blur(16px); }
@@ -165,7 +169,10 @@ h1 { font-family: var(--display); font-size: clamp(46px, 9vw, 102px); line-heigh
   .brand-logo { width: 42px; height: 42px; border-radius: 11px; }
   .nav-links .button { padding: 10px 12px; min-height: 40px; font-size: 12px; }
   .hero-media, .hero-media img { min-height: 300px; }
+  .hero-badges { gap: 8px; }
+  .hero-badges span { width: 100%; justify-content: center; text-align: center; }
   .section { padding: 44px 0; }
+  .highlight-section { padding-top: 0; }
   .card { padding: 20px; }
   .hours-list p { align-items: flex-start; flex-direction: column; gap: 4px; }
   .footer { padding-bottom: 100px; }
