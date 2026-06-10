@@ -30,22 +30,5 @@
       "has": [{ "type": "host", "value": "www.il-barbiere.uk" }],
       "destination": "/il-barbiere/"
     }
-  ],
-  "redirects": [
-    {
-      "source": "/histon-barbers/:path*",
-      "destination": "/",
-      "permanent": false
-    },
-    {
-      "source": "/parkers-barbers/:path*",
-      "destination": "/",
-      "permanent": false
-    },
-    {
-      "source": "/il-barbiere/:path*",
-      "destination": "/",
-      "permanent": false
-    }
   ]
 }
