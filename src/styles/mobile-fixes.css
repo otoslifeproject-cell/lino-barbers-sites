@@ -1,9 +1,37 @@
-@media (max-width: 800px) {
-  html,
-  body {
-    overflow-x: hidden;
+h1 {
+  white-space: pre-line !important;
+}
+
+@media (min-width: 801px) {
+  h1 {
+    font-size: clamp(70px, 9.5vw, 116px) !important;
+    line-height: 0.9 !important;
+    letter-spacing: -0.045em !important;
+    max-width: 11ch;
   }
 
+  .theme-heritage h1 {
+    font-size: clamp(74px, 8.8vw, 112px) !important;
+    line-height: 0.88 !important;
+    max-width: 10.5ch;
+  }
+
+  .theme-village h1 {
+    font-size: clamp(72px, 9.2vw, 112px) !important;
+    line-height: 0.9 !important;
+    max-width: 11ch;
+  }
+
+  .theme-modern h1 {
+    font-size: clamp(76px, 8.8vw, 116px) !important;
+    line-height: 0.9 !important;
+    max-width: 11ch;
+  }
+}
+
+@media (max-width: 800px) {
+  html,
+  body,
   .shop-site {
     overflow-x: hidden;
   }
@@ -23,19 +51,30 @@
 
   h1 {
     max-width: 100%;
-    font-size: clamp(34px, 8.5vw, 48px) !important;
-    line-height: 1.05 !important;
-    letter-spacing: -0.02em !important;
+    font-size: clamp(48px, 12.5vw, 68px) !important;
+    line-height: 0.92 !important;
+    letter-spacing: -0.035em !important;
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   .theme-heritage h1 {
-    font-size: clamp(28px, 7vw, 38px) !important;
-    line-height: 1.08 !important;
-    letter-spacing: -0.006em !important;
+    font-size: clamp(54px, 14vw, 76px) !important;
+    line-height: 0.9 !important;
+    letter-spacing: -0.018em !important;
+    max-width: 10.5ch !important;
+  }
+
+  .theme-village h1 {
+    font-size: clamp(46px, 11.5vw, 66px) !important;
+    line-height: 0.92 !important;
+    max-width: 12ch !important;
   }
 
   .theme-modern h1 {
-    font-size: clamp(34px, 8.5vw, 48px) !important;
+    font-size: clamp(52px, 13.5vw, 76px) !important;
+    line-height: 0.9 !important;
+    max-width: 10.5ch !important;
   }
 
   .lede {
@@ -50,15 +89,19 @@
   }
 
   h1 {
-    font-size: 36px !important;
+    font-size: 48px !important;
   }
 
   .theme-heritage h1 {
-    font-size: 30px !important;
+    font-size: 54px !important;
+  }
+
+  .theme-village h1 {
+    font-size: 44px !important;
   }
 
   .theme-modern h1 {
-    font-size: 38px !important;
+    font-size: 52px !important;
   }
 
   .kicker {
@@ -69,14 +112,18 @@
 
 @media (max-width: 380px) {
   h1 {
-    font-size: 32px !important;
+    font-size: 42px !important;
   }
 
   .theme-heritage h1 {
-    font-size: 27px !important;
+    font-size: 48px !important;
+  }
+
+  .theme-village h1 {
+    font-size: 40px !important;
   }
 
   .theme-modern h1 {
-    font-size: 34px !important;
+    font-size: 46px !important;
   }
 }
