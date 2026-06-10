@@ -2,6 +2,8 @@
 const { shop } = Astro.props;
 const bookHref = shop.booksyUrl ? shop.booksyUrl : '#location';
 const primaryTarget = shop.booksyUrl ? '_blank' : '_self';
+const heroBadges = [shop.availabilityLine, ...shop.highlights.slice(0, 2).map((item) => item.title)].filter(Boolean);
+const uniqueHeroBadges = [...new Map(heroBadges.map((badge) => [badge.trim().toLowerCase(), badge])).values()];
 ---
 <section class="hero">
   <div class="container hero-grid">
@@ -10,8 +12,7 @@ const primaryTarget = shop.booksyUrl ? '_blank' : '_self';
       <h1>{shop.tagline}</h1>
       <p class="lede">{shop.intro}</p>
       <div class="hero-badges" aria-label="Shop highlights">
-        <span>{shop.availabilityLine}</span>
-        {shop.highlights.slice(0, 2).map((item) => <span>{item.title}</span>)}
+        {uniqueHeroBadges.map((badge) => <span>{badge}</span>)}
       </div>
       <div class="hero-actions">
         <a class="button" href={bookHref} target={primaryTarget} rel="noreferrer">{shop.primaryCtaLabel}</a>
