@@ -1,14 +1,16 @@
 ---
 const { shop } = Astro.props;
-const phoneHref = shop.phone === 'Needs Lino confirmation' ? '#contact' : `tel:${shop.phone.replace(/\s+/g, '')}`;
+const phoneHref = shop.phone ? `tel:${shop.phone.replace(/\s+/g, '')}` : '#contact';
 const mapsHref = shop.googleMapsUrl && shop.googleMapsUrl !== '#' ? shop.googleMapsUrl : '#contact';
+const bookingLine = shop.bookingMode === 'walk-ins-only' ? 'Walk-ins only' : 'Book online or walk in';
 ---
 <section class="section" id="location">
   <div class="container two-col">
-    <div class="card">
+    <div class="card contact-card">
       <p class="kicker">Find us</p>
       <h2 class="section-title">Visit {shop.shortName}</h2>
       <p>{shop.address}</p>
+      <p class="contact-note"><strong>{bookingLine}</strong></p>
       <div class="contact-actions">
         <a class="button" href={mapsHref} target={mapsHref.startsWith('http') ? '_blank' : '_self'} rel="noreferrer">Open maps</a>
         <a class="button secondary" href={phoneHref}>Call {shop.shortName}</a>
