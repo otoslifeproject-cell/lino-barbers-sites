@@ -2,6 +2,17 @@ h1 {
   white-space: pre-line !important;
 }
 
+.theme-modern .hero-media span {
+  display: none !important;
+}
+
+.theme-modern .hero-media img {
+  object-fit: contain !important;
+  object-position: center center !important;
+  transform: none !important;
+  background: var(--bg);
+}
+
 @media (min-width: 801px) {
   h1 {
     font-size: clamp(70px, 9.5vw, 116px) !important;
