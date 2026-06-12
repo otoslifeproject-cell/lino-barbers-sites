@@ -7,10 +7,9 @@ h1 {
 }
 
 .theme-modern .hero-media img {
-  object-fit: contain !important;
+  object-fit: cover !important;
   object-position: center center !important;
-  transform: none !important;
-  background: var(--bg);
+  transform: scale(1.01) !important;
 }
 
 @media (min-width: 801px) {
